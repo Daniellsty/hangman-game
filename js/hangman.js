@@ -23,7 +23,7 @@ let programing_languages = [
 let answer ="";
 let maxWrong =6 ;
 let mistakes= 0;
-let quessed =[]
+let guessed =[]
 
 function randomWords(){
 
@@ -35,7 +35,7 @@ function generateButton(){
 
     let buttons= `ABCDEFGHIJKLMNOPQRSTUVWXYZ`.split('').map((item)=>
         `
-        <button id="button" class="bg-blue-200 m-2 py-2 px-3 rounded border-[2px] border-slate-400 hover:shadow-slate-500 shadow-lg" onclick="handleguess('`+item+ `')" >
+        <button id="`+item+`" class="bg-blue-200 m-2 py-2 px-3 rounded border-[2px] border-slate-400 hover:shadow-slate-500 shadow-lg" onclick="handleguess('`+item+ `')" >
         `+item+`
         <button/>
 
@@ -46,10 +46,22 @@ function generateButton(){
     document.getElementById('all-buttons').innerHTML= buttons.join('')
 
 }
+function handleguess(chosenLetter){
 
+    guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null
 
-function handleguess(name){
+    document.getElementById(chosenLetter)
+
+    if(answer.indexOf(chosenLetter) >= 0 ){
+
+        guessWord()
+
+    }
+
     
 }
+
+
+
 
 generateButton()
