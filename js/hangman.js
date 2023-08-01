@@ -1,23 +1,23 @@
 let programing_languages = [
-  "Javascript",
-  "Python",
-  "Go",
-  "Java",
-  "Kotlin",
-  "PHP",
-  "C",
-  "Swift",
-  "R",
-  "Ruby",
-  "Matlab",
-  "TypeScript",
-  "Scala",
-  "SQL",
-  "HTML",
-  "CSS",
-  "NoSQL",
-  "Rust",
-  "Perl",
+  "javascript",
+  "python",
+  "go",
+  "java",
+  "kotlin",
+  "php",
+  "c",
+  "swift",
+  "r",
+  "ruby",
+  "matlab",
+  "typescript",
+  "scala",
+  "sql",
+  "htlm",
+  "css",
+  "nosql",
+  "rust",
+  "perl",
 ];
 
 let answer ="";
@@ -25,7 +25,7 @@ let maxWrong =6 ;
 let mistakes= 0;
 let guessed =[]
 let wordStatus= null
-
+document.getElementById("mistakes").innerHTML = mistakes
 function randomWords(){
 
     answer = programing_languages[Math.floor(Math.random() * programing_languages.length )]
@@ -34,7 +34,7 @@ function randomWords(){
 
 function generateButton(){
 
-    let buttons= `ABCDEFGHIJKLMNOPQRSTUVWXYZ`.split('').map((item)=>
+    let buttons= `abcdefghijklmnopqrstuvwxyz`.split('').map((item)=>
         `
         <button id= '`+item+`' class="bg-blue-200 m-2 py-2 px-3 rounded border-[2px] border-slate-400 hover:shadow-slate-500 shadow-lg" onclick="handleguess('`+item+ `')" >
         `+item+`
@@ -52,7 +52,7 @@ function handleguess(chosenLetter){
 
     guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null
 
-  //  document.getElementById(chosenLetter).setAttribute('disabled',true)
+   document.getElementById(chosenLetter).setAttribute('disabled',true)
 
   console.log(answer);
     if(answer.indexOf(chosenLetter) >= 0 ){
@@ -80,7 +80,15 @@ function checkIfwon(){
 
 
 function updateMistake(){
-    document.getElementById("mistakes").innerHTML = mistakes
+    if(mistakes <= 6){
+        document.getElementById("mistakes").innerHTML = mistakes
+
+    }
+    if(mistakes > 6){
+        document.getElementById("lost-game").innerHTML = 'you lost :(';
+        document.getElementById(chosenLetter).setAttribute('disabled',true)
+
+    }
 }
 
 
@@ -95,5 +103,5 @@ function guessWord(){
 }
 
 generateButton()
-handleguess()
+
 randomWords()
