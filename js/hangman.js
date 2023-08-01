@@ -58,6 +58,7 @@ function handleguess(chosenLetter){
     if(answer.indexOf(chosenLetter) >= 0 ){
 
         guessWord()
+        checkIfwon()
 
     }else if(answer.indexOf(chosenLetter) >= -1 ){
 
@@ -71,6 +72,11 @@ function handleguess(chosenLetter){
     
 }
 
+function checkIfwon(){
+    if(wordStatus === answer ){
+        document.getElementById('keyboard').innerHTML = 'you won'
+    }
+}
 
 
 function updateMistake(){
