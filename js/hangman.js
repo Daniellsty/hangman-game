@@ -94,14 +94,30 @@ function updateMistake(){
 
 function guessWord(){
 
-    wordStatus = answer.split('').map((item)=> guessed.indexOf(item) >= 0 ? item : '_').join('')
+    wordStatus = answer.split('').map((item)=> guessed.indexOf(item) >= 0 ? item : ' _ ').join('')
 
     document.getElementById('wordStatus').innerHTML= wordStatus
-    console.log(wordStatus);
+   
 
 
 }
 
 generateButton()
-
 randomWords()
+guessWord()
+
+function reset(){
+
+    document.getElementById('img-man').src = './images/0.jpg';
+    document.getElementById('keyboard').innerHTML= ''
+    document.getElementById("lost-game").innerHTML= ''
+    mistakes= 0
+    guessed=[]
+    randomWords()
+    updateMistake()
+    generateButton()
+    guessWord()
+
+
+
+}

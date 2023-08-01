@@ -15,10 +15,10 @@
         </p>
         <div class="text-center">
 
-            <img class="text-center mx-auto" src="./images/0.jpg" alt="">
+            <img id="img-man" class="text-center mx-auto" src="./images/0.jpg" alt="">
             <div class="flex flex-col">
-                <p class="mt-10">Guess the programming Languag</p>
-                <p class="mx-2" id="wordStatus"></p>
+                <p class="mt-10">Guess the programming Language</p>
+                <p  id="wordStatus"></p>
                 <p class="" id="keyboard"></p>
 
             </div>
@@ -27,7 +27,7 @@
         <div class="mx-auto my-5 text-center w-2/3  " id="all-buttons">
 
         </div>
-        <button class="my-5 bg-green-400 px-3 py-2 rounded border-[3px] border-green-500 ">Reset</button>
+        <button onclick="reset()" class="my-5 bg-green-400 px-3 py-2 rounded border-[3px] border-green-500 ">Reset</button>
     </div>
     <script src="js/hangman.js"></script>
 </body>
