@@ -5,21 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hangman</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/output.css">
 </head>
-<body>
-    <h1 class="text-3xl text-center text-red-500">Hangman</h1>
+<body style="background-image: url('./images/male-hands-hold-gamepad-blue-background-copy-space_169016-17528.avif') ; min-height:100vh "  class=" bg-cover bg-center  bg-no-repeat  object-cover " >
+   
+    <h1 class="text-3xl text-center text-white"></h1>
     <div class="main-container text-center">
-        <p class="text-right mr-24  mt-5">worng Guess <span id="mistakes"></span> of  6
-        <p id="lost-game"></p>
+        <p class="text-white text-right mr-24  mt-5">worng Guess <span id="mistakes"></span> of  6
+        <h1 class="text-red-500 text-3xl" id="lost-game"></h1>
         </p>
         <div class="text-center">
-
             <img id="img-man" class="text-center mx-auto" src="./images/0.jpg" alt="">
             <div class="flex flex-col">
-                <p class="mt-10">Guess the programming Language</p>
-                <p  id="wordStatus"></p>
-                <p class="" id="keyboard"></p>
+                <p class="text-white mt-10">Guess the programming Language</p>
+                <p class="text-white" id="wordStatus"></p>
+                <p class="text-white" id="keyboard"></p>
 
             </div>
 

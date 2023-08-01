@@ -36,7 +36,7 @@ function generateButton(){
 
     let buttons= `abcdefghijklmnopqrstuvwxyz`.split('').map((item)=>
         `
-        <button id= '`+item+`' class="bg-blue-200 m-2 py-2 px-3 rounded border-[2px] border-slate-400 hover:shadow-slate-500 shadow-lg" onclick="handleguess('`+item+ `')" >
+        <button id= '`+item+`' class="disabled:bg-blue-200 bg-gray-400 m-2 py-2 px-3 rounded border-[2px] border-slate-400 hover:shadow-slate-500 shadow-lg text-white" onclick="handleguess('`+item+ `')" >
         `+item+`
         <button/>
 
@@ -82,9 +82,11 @@ function checkIfwon(){
 function updateMistake(){
     if(mistakes <= 6){
         document.getElementById("mistakes").innerHTML = mistakes
+        document.getElementById('img-man').src = `./images/${mistakes}.jpg`;
+
 
     }
-    if(mistakes > 6){
+    if(mistakes >= 6){
         document.getElementById("lost-game").innerHTML = 'you lost :(';
         document.getElementById(chosenLetter).setAttribute('disabled',true)
 
